@@ -1,1 +1,47 @@
-
+[
+  {
+    "id": "sig-brave-browser",
+    "name": "Brave Browser launch / network",
+    "type": "process",
+    "patterns": ["brave", "brave-browser"],
+    "severity": "medium",
+    "description": "BRAVE BROWSER SIGNATURE",
+    "demo": false
+  },
+  {
+    "id": "sig-whatsapp",
+    "name": "WhatsApp application / web",
+    "type": "hybrid",
+    "patterns": ["whatsapp", "web.whatsapp.com", "whatsapp.com"],
+    "severity": "medium",
+    "description": "WHATSAPP SIGNATURE",
+    "demo": false
+  },
+  {
+    "id": "sig-youtube",
+    "name": "YouTube domain access",
+    "type": "domain",
+    "patterns": ["youtube.com", "youtu.be"],
+    "severity": "high",
+    "description": "YT SIGNATURE",
+    "demo": false
+  },
+  {
+    "id": "sig-leetcode",
+    "name": "LeetCode website access",
+    "type": "domain",
+    "patterns": ["leetcode.com"],
+    "severity": "high",
+    "description": "LEETCODE SIGNATURE",
+    "demo": false
+  },
+  {
+    "id": "sig-geeksforgeeks",
+    "name": "GeeksforGeeks website access",
+    "type": "domain",
+    "patterns": ["geeksforgeeks.org", "geeksforgeeks.com"],
+    "severity": "high",
+    "description": "GFG SIGNATURE",
+    "demo": false
+  }
+]
