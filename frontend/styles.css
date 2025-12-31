@@ -1,0 +1,87 @@
+:root{--bg:#0f1720;--card:#0b1220;--muted:#94a3b8;--accent:#06b6d4}
+body{margin:0;font-family:Inter,system-ui,Arial;background:linear-gradient(180deg,#071021, #0f1720);color:#dbeafe}
+.app{display:flex;min-height:100vh}
+.sidebar{width:220px;padding:20px;background:rgba(2,6,23,0.6);box-shadow:2px 0 8px rgba(0,0,0,0.4)}
+.sidebar h2{margin:0 0 12px}
+.sidebar nav a{display:block;color:var(--muted);text-decoration:none;margin:8px 0}
+.sidebar nav a:hover{color:var(--accent)}
+.sidebar nav a.active {
+  background: rgba(6, 182, 212, 0.12);
+  color: var(--accent);
+  padding: 6px 8px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+/* Ensure anchor default visited/underline styles are neutralized inside sidebar */
+.sidebar nav a {
+  text-decoration: none;
+  color: var(--muted);
+}
+.main{flex:1;padding:24px}
+.cards{display:flex;gap:12px;margin-bottom:16px}
+.card{background:rgba(255,255,255,0.03);padding:16px;border-radius:8px;min-width:160px}
+.feed{max-height:360px;overflow:auto;border-radius:8px;padding:8px;background:rgba(255,255,255,0.02)}
+.feed-item{padding:8px;border-bottom:1px solid rgba(255,255,255,0.02)}
+.feed-item.alert{background:rgba(255,69,58,0.06)}
+.alert-card{background:rgba(255,255,255,0.03);padding:12px;border-radius:6px;margin-bottom:10px}
+.sign-list{list-style:none;padding:0}
+.audit{background:#021124;padding:12px;border-radius:6px}
+/* Add transitions for hover feedback */
+.sidebar nav a {
+  display: block;
+  color: var(--muted);
+  text-decoration: none;
+  margin: 8px 0;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.sidebar nav a:hover {
+  color: var(--accent);
+  transform: translateX(4px);
+}
+
+/* Improve scrollbar for dark mode */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* Make cards glow slightly on hover */
+.card:hover, .alert-card:hover {
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.2);
+  transform: translateY(-2px);
+  transition: all 0.2s ease;
+}
+
+/* Bottom-left mode toggle (Realtime / Demo) */
+.mode-toggle {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  display: flex;
+  gap: 8px;
+  background: rgba(255,255,255,0.02);
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+}
+.mode-toggle button {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.14s ease;
+}
+.mode-toggle button:hover { transform: translateY(-2px); color: var(--accent); }
+.mode-toggle button.active {
+  background: linear-gradient(90deg, rgba(6,182,212,0.12), rgba(6,182,212,0.06));
+  color: var(--accent);
+  border-color: rgba(6,182,212,0.16);
+}
